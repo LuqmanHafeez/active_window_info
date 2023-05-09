@@ -1,7 +1,11 @@
+import 'package:ffi/ffi.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'package:flutter/services.dart';
 import 'package:active_window_info/active_window_info.dart';
+import 'dart:ffi';
+import 'package:ffi/ffi.dart';
+import 'package:win32/win32.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,6 +33,7 @@ class _MyAppState extends State<MyApp> {
     // Platform messages may fail, so we use a try/catch PlatformException.
     // We also handle the message potentially returning null.
     try {
+      await Future.delayed(Duration(seconds: 1));
       platformVersion = await _activeWindowInfoPlugin.getActiveWindowInfo() ??
           'Unknown platform version';
     } on PlatformException {

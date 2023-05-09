@@ -16,6 +16,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  ffi: ^2.0.2
+  win32: ^4.1.4
 
   active_window_info:
     # When depending on this package from a real application you should use:
